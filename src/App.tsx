@@ -1,5 +1,5 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
-import { Clientes, Home, Sobre } from "./pages";
+import { Clientes, Home, NotFound, Sobre } from "./pages";
 
 function App() {
   return (
@@ -27,17 +27,12 @@ function App() {
         </nav>
       </header>
       <hr />
-        <Routes>
-          <Route path="/" element={<Home />} />
-        </Routes>
-
-        <Routes>
-          <Route path="/clientes" element={<Clientes />} />
-        </Routes>
-
-        <Routes>
-          <Route path="/sobre" element={<Sobre />} />
-        </Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/clientes" element={<Clientes />} />
+        <Route path="/sobre" element={<Sobre />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
       <footer>
         Todos os direitos reservados©️
       </footer>
