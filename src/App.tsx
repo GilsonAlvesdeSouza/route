@@ -12,7 +12,13 @@ function App() {
               <Link to="/">Home</Link>
             </li>
             <li>
-              <Link to="/clientes">Clientes</Link>
+              <Link to="/clientes/1">Clientes1</Link>
+            </li>
+            <li>
+              <Link to="/clientes/2">Clientes2</Link>
+            </li>
+            <li>
+              <Link to="/clientes/3">Clientes3</Link>
             </li>
             <li>
               <Link to="/sobre">Sobre</Link>
@@ -26,7 +32,7 @@ function App() {
         </Routes>
 
         <Routes>
-          <Route path="/clientes" element={<Clientes />} />
+          <Route path="/clientes/:id" element={<Clientes />} />
         </Routes>
 
         <Routes>
