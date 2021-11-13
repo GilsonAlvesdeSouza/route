@@ -1,11 +1,18 @@
-import {useParams} from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 function Clientes() {
-    let {id} = useParams();
+    let query = useQuery();
+
+    let tipoPessoa = query.get("pessoa");
+    
+
+    function useQuery() {
+        return new URLSearchParams(useLocation().search);
+    }
 
     return (
         <div>
-            Cliente: {id}
+            Cliente: {tipoPessoa}
             <p>Lista de clientes</p>
             <ul>
                 <li>Fulano</li>
