@@ -2,6 +2,9 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { Clientes, Home, NotFound, Sobre } from "./pages";
 
 function App() {
+
+ 
+
   return (
     <BrowserRouter>
       <header>
@@ -31,6 +34,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/clientes" element={<Clientes />} />
         <Route path="/sobre" element={<Sobre />} />
+        <Route path="/quem-somos" element={<Sobre />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <footer>
