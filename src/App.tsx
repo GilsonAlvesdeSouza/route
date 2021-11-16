@@ -1,10 +1,7 @@
-import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Link, Redirect, useHistory } from "react-router-dom";
 import { Clientes, Home, NotFound, Sobre } from "./pages";
 
 function App() {
-
- 
-
   return (
     <BrowserRouter>
       <header>
@@ -12,31 +9,41 @@ function App() {
         <nav>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link className={"link"} to="/">Home</Link>
             </li>
             <li>
-              <Link to="/clientes?pessoa=fisica">Clientes1</Link>
+              <Link className={"link"} to="/clientes?pessoa=fisica">Clientes1</Link>
             </li>
             <li>
-              <Link to="/clientes?pessoa=juridica">Clientes2</Link>
+              <Link className={"link"} to="/clientes?pessoa=juridica">Clientes2</Link>
             </li>
             <li>
-              <Link to="/clientes?pessoa=fisica">Clientes3</Link>
+              <Link className={"link"} to="/clientes?pessoa=fisica">Clientes3</Link>
             </li>
             <li>
-              <Link to="/sobre">Sobre</Link>
+              <Link className={"link"} to="/sobre">Sobre</Link>
             </li>
           </ul>
         </nav>
       </header>
       <hr />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/clientes" element={<Clientes />} />
-        <Route path="/sobre" element={<Sobre />} />
-        <Route path="/quem-somos" element={<Sobre />} />
-        <Route path="*" element={<NotFound />} />
-      </Routes>
+      <Switch>
+        <Route exact path="/" >
+          <Home />
+        </Route>
+        <Route path="/clientes" >
+          <Clientes />
+        </Route>
+        <Route path="/sobre" >
+          <Sobre />
+        </Route>
+        <Route path="/quem-somos">
+          <Redirect to="/sobre" />
+        </Route>
+        <Route path="*" >
+          <NotFound />
+        </Route>
+      </Switch>
       <footer>
         Todos os direitos reservados©️
       </footer>

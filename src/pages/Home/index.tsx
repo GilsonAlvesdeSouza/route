@@ -1,12 +1,16 @@
-import { useNavigate } from "react-router";
+import { useHistory } from "react-router-dom";
 function Home() {
 
-    let navigate = useNavigate();
+    const history = useHistory();
+
+    const handleButton = () => {
+        history.replace("/sobre");
+    };
 
     return (
         <div>
             <h1>Seja bem vindo!...</h1>
-            <button onClick={() => {setTimeout(() => navigate("/sobre"),2000)}}>ir para a página sobre</button>
+            <button onClick={() => setTimeout(handleButton, 2000) }>ir para a página sobre</button>
         </div>
     );
 }
