@@ -40,5 +40,6 @@ export const Container = styled.div`
     bottom: 0;
     left: 0;
     flex-direction: row-reverse;
+    color: #FFF;
   }
 `;
